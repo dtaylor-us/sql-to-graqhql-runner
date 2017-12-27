@@ -16,16 +16,24 @@ create_schema() {
 }
 
 update_generated_src() {
-    echo Updating Generated Project...
+    echo 'Project: Updating Generated Project...'
+    
     # change content type to accept json not grqphql in generated server.js
+    echo 'Project: setting content type to JSON'
     sed -i -e 's~application/graphql~application/json~g' src/server.js
-    echo 'Content was set to JSON'
-
+    
+    echo 'Project: Generating Graphiql template'
     # copy graphiql template
     cp graphiql-template.html index.html
     # replacing generated index.html file with graphiql template
     mv index.html src/public
-    echo 'Graphiql template generated'
+
+    echo 'Project: Removing unecessary return statement from handlers/graphql.js'
+    # remove return statement from handlers/graphql.js
+    sed -i src/handlers/graphql.js -re '13,15d'
+
+    echo 'Project: Udating graphql version in package.json to 0.10.1'
+    npm install --save graphql@0.10.1
 }
 
 start() {
@@ -33,12 +41,6 @@ start() {
     npm install
     npm start
 }
-
-test(){
-    return reply(Boom.badRequest(
-    sed -i -e 's~application/graphql~application/json~g' src/server.js
-} 
-
 
 case $1 in
     test)
