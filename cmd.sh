@@ -35,6 +35,7 @@ start() {
 }
 
 test(){
+    return reply(Boom.badRequest(
     sed -i -e 's~application/graphql~application/json~g' src/server.js
 } 
 
