@@ -33,6 +33,7 @@ update_generated_src() {
     sed -i src/handlers/graphql.js -re '13,15d'
 
     echo 'Project: Udating graphql version in package.json to 0.10.1'
+    . cd $DIR"/src"
     npm install --save graphql@0.10.1
 }
 
