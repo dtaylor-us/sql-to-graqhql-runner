@@ -2,17 +2,24 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DB=$2
 PASSWORD=$3
-OUT="src"
+OUT=$4
 GRAPHQL_CONTENT_TYPE="application/graphql"
 JSON_CONTENT_TYPE="application/json"
-
 
 destroy_schema() {
   rm -r $DIR"/src"
 }
 
 create_schema() {
+    sql2graphql --db $DB -p $PASSWORD -o "src"
+}
+
+demo() {
+    rm -r $DIR"/"$OUT
     sql2graphql --db $DB -p $PASSWORD -o $OUT
+    . cd $DIR"/"$OUT
+    npm install
+    npm start
 }
 
 update_generated_src() {
@@ -32,9 +39,10 @@ update_generated_src() {
     # remove return statement from handlers/graphql.js
     sed -i src/handlers/graphql.js -re '13,15d'
 
-    echo 'Project: Udating graphql version in package.json to 0.10.1'
+    # update graphql dependencey to versiongraph-I-ql is using
+    echo 'Project: Udating graphql version in package.json to 0.1.1'
     . cd $DIR"/src"
-    npm install --save graphql@0.10.1
+    npm install --save graphql@0.12.3
 }
 
 start() {
@@ -61,7 +69,9 @@ case $1 in
         create_schema
         update_generated_src
         ;;
+    demo)
+        demo
+        ;;
 
-    
     esac
 exit 0
