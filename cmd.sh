@@ -15,9 +15,9 @@ create_schema() {
 }
 
 demo() {
-    rm -r $DIR"/"$OUT
-    sql2graphql --db $DB -p $PASSWORD -o $OUT
-    . cd $DIR"/"$OUT
+    rm -r $DIR"/demo"
+    sql2graphql --db $DB -p $PASSWORD -o demo
+    . cd $DIR"/demo"
     npm install
     npm start
 }

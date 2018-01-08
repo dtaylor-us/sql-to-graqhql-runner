@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -53,24 +52,6 @@ var PermissionType = new GraphQLObjectType({
             irmEventCode: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            useractivitylogs: {
-                type: new GraphQLList(getType('Useractivitylog')),
-                description: 'Useractivitylogs belonging to this Permission',
-                resolve: getEntityResolver('Useractivitylog'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

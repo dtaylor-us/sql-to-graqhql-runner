@@ -325,7 +325,7 @@ var ClaimpricingoutputdetailType = new GraphQLObjectType({
                 description: '@TODO DESCRIBE ME'
             },
 
-            nonCriticalEditCode: {
+            nonTerminalEditCode: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
             },
@@ -426,11 +426,6 @@ var ClaimpricingoutputdetailType = new GraphQLObjectType({
                 resolve: getEntityResolver('Vendor')
             },
 
-            incidentalLineInd: {
-                type: GraphQLInt,
-                description: '@TODO DESCRIBE ME'
-            },
-
             pricingReturnCode: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
@@ -448,6 +443,11 @@ var ClaimpricingoutputdetailType = new GraphQLObjectType({
 
             reasonCode: {
                 type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            incidentalLineInd: {
+                type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
             }
         };

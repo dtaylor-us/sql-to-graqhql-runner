@@ -291,6 +291,26 @@ var MemberbenefitType = new GraphQLObjectType({
             proposedExpirationDate: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
+            },
+
+            priorExpirationDate: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            priorExpirationReason: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            priorTermMethod: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            logicalDeleteReason: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
             }
         };
     }

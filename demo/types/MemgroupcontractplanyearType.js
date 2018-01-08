@@ -97,6 +97,11 @@ var MemgroupcontractplanyearType = new GraphQLObjectType({
             deleteInd: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
+            },
+
+            logicalDeleteReason: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
             }
         };
     }

@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -113,60 +112,6 @@ var NetworkType = new GraphQLObjectType({
             excludeProviderTermFulfillInd: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            benefitplancodes: {
-                type: new GraphQLList(getType('Benefitplancode')),
-                description: 'Benefitplancodes belonging to this Network',
-                resolve: getEntityResolver('Benefitplancode'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            benelanguageschedtexts: {
-                type: new GraphQLList(getType('Benelanguageschedtext')),
-                description: 'Benelanguageschedtexts belonging to this Network',
-                resolve: getEntityResolver('Benelanguageschedtext'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            networkauditdetails: {
-                type: new GraphQLList(getType('Networkauditdetail')),
-                description: 'Networkauditdetails belonging to this Network',
-                resolve: getEntityResolver('Networkauditdetail'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

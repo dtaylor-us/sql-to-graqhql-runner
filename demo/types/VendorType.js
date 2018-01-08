@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -59,114 +58,6 @@ var VendorType = new GraphQLObjectType({
             updateVersion: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            claimpricingoutputdetails: {
-                type: new GraphQLList(getType('Claimpricingoutputdetail')),
-                description: 'Claimpricingoutputdetails belonging to this Vendor',
-                resolve: getEntityResolver('Claimpricingoutputdetail'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            memgroups: {
-                type: new GraphQLList(getType('Memgroup')),
-                description: 'Memgroups belonging to this Vendor',
-                resolve: getEntityResolver('Memgroup'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            memgroupcontractplanoptions: {
-                type: new GraphQLList(getType('Memgroupcontractplanoption')),
-                description: 'Memgroupcontractplanoptions belonging to this Vendor',
-                resolve: getEntityResolver('Memgroupcontractplanoption'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            serviceplans: {
-                type: new GraphQLList(getType('Serviceplan')),
-                description: 'Serviceplans belonging to this Vendor',
-                resolve: getEntityResolver('Serviceplan'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            utilizationplans: {
-                type: new GraphQLList(getType('Utilizationplan')),
-                description: 'Utilizationplans belonging to this Vendor',
-                resolve: getEntityResolver('Utilizationplan'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            vendors: {
-                type: new GraphQLList(getType('Vendor')),
-                description: 'Vendors belonging to this Vendor',
-                resolve: getEntityResolver('Vendor'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

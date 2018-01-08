@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -163,114 +162,6 @@ var MemberType = new GraphQLObjectType({
             claimAuditInd: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            aptransactiondetails: {
-                type: new GraphQLList(getType('Aptransactiondetail')),
-                description: 'Aptransactiondetails belonging to this Member',
-                resolve: getEntityResolver('Aptransactiondetail'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            aptransactiondetailsFamMember: {
-                type: new GraphQLList(getType('Aptransactiondetail')),
-                description: 'Aptransactiondetails belonging to this Member..? (famMemberID)',
-                resolve: getEntityResolver('Aptransactiondetail'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            claimheaders: {
-                type: new GraphQLList(getType('Claimheader')),
-                description: 'Claimheaders belonging to this Member',
-                resolve: getEntityResolver('Claimheader'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            memberauditdetails: {
-                type: new GraphQLList(getType('Memberauditdetail')),
-                description: 'Memberauditdetails belonging to this Member',
-                resolve: getEntityResolver('Memberauditdetail'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            memberexternalids: {
-                type: new GraphQLList(getType('Memberexternalid')),
-                description: 'Memberexternalids belonging to this Member',
-                resolve: getEntityResolver('Memberexternalid'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            memberindicators: {
-                type: new GraphQLList(getType('Memberindicator')),
-                description: 'Memberindicators belonging to this Member',
-                resolve: getEntityResolver('Memberindicator'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

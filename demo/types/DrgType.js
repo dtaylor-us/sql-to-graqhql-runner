@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLInt = GraphQL.GraphQLInt;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLString = GraphQL.GraphQLString;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -93,24 +92,6 @@ var DrgType = new GraphQLObjectType({
             updateVersion: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            claimpricingdetailtiers: {
-                type: new GraphQLList(getType('Claimpricingdetailtier')),
-                description: 'Claimpricingdetailtiers belonging to this Drg',
-                resolve: getEntityResolver('Claimpricingdetailtier'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -68,42 +67,6 @@ var RegionType = new GraphQLObjectType({
             updateVersion: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            anesthesiacomps: {
-                type: new GraphQLList(getType('Anesthesiacomp')),
-                description: 'Anesthesiacomps belonging to this Region',
-                resolve: getEntityResolver('Anesthesiacomp'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            serviceareapostals: {
-                type: new GraphQLList(getType('Serviceareapostal')),
-                description: 'Serviceareapostals belonging to this Region',
-                resolve: getEntityResolver('Serviceareapostal'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

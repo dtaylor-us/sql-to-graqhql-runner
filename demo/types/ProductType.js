@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -182,42 +181,6 @@ var ProductType = new GraphQLObjectType({
             delegSetId: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            carrierlobproducts: {
-                type: new GraphQLList(getType('Carrierlobproduct')),
-                description: 'Carrierlobproducts belonging to this Product',
-                resolve: getEntityResolver('Carrierlobproduct'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            utilizationplans: {
-                type: new GraphQLList(getType('Utilizationplan')),
-                description: 'Utilizationplans belonging to this Product',
-                resolve: getEntityResolver('Utilizationplan'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

@@ -5,7 +5,6 @@ var GraphQLObjectType = GraphQL.GraphQLObjectType;
 var GraphQLString = GraphQL.GraphQLString;
 var GraphQLNonNull = GraphQL.GraphQLNonNull;
 var GraphQLInt = GraphQL.GraphQLInt;
-var GraphQLList = GraphQL.GraphQLList;
 var getType = resolveMap.getType;
 var registerType = resolveMap.registerType;
 
@@ -94,60 +93,6 @@ var CarrierType = new GraphQLObjectType({
             carrierBusinessId: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
-            },
-
-            carrierauditdetails: {
-                type: new GraphQLList(getType('Carrierauditdetail')),
-                description: 'Carrierauditdetails belonging to this Carrier',
-                resolve: getEntityResolver('Carrierauditdetail'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            carrierlineofbusinesses: {
-                type: new GraphQLList(getType('Carrierlineofbusiness')),
-                description: 'Carrierlineofbusinesses belonging to this Carrier',
-                resolve: getEntityResolver('Carrierlineofbusiness'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
-            },
-
-            memberbenefits: {
-                type: new GraphQLList(getType('Memberbenefit')),
-                description: 'Memberbenefits belonging to this Carrier',
-                resolve: getEntityResolver('Memberbenefit'),
-
-                args: {
-                    limit: {
-                        name: 'limit',
-                        type: GraphQLInt
-                    },
-
-                    offset: {
-                        name: 'offset',
-                        type: GraphQLInt
-                    }
-                }
             }
         };
     }

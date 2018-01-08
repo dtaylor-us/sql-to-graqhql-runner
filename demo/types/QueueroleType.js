@@ -97,6 +97,11 @@ var QueueroleType = new GraphQLObjectType({
             routingCodeFilter: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
+            },
+
+            sourceTypeFilter: {
+                type: GraphQLInt,
+                description: '@TODO DESCRIBE ME'
             }
         };
     }

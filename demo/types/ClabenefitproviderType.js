@@ -75,12 +75,22 @@ var ClabenefitproviderType = new GraphQLObjectType({
                 description: '@TODO DESCRIBE ME'
             },
 
+            provContractId: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
             provContractHeaderId: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
             },
 
             netContractVersionId: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            netContractId: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
             },
@@ -150,6 +160,16 @@ var ClabenefitproviderType = new GraphQLObjectType({
                 description: '@TODO DESCRIBE ME'
             },
 
+            pricingDosType: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            pricingDos: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
             createDateTime: {
                 type: new GraphQLNonNull(GraphQLInt),
                 description: '@TODO DESCRIBE ME'
@@ -172,16 +192,6 @@ var ClabenefitproviderType = new GraphQLObjectType({
 
             updateVersion: {
                 type: GraphQLInt,
-                description: '@TODO DESCRIBE ME'
-            },
-
-            provContractId: {
-                type: GraphQLString,
-                description: '@TODO DESCRIBE ME'
-            },
-
-            netContractId: {
-                type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
             }
         };

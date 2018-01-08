@@ -144,7 +144,7 @@ var ClaimpricingoutputheaderType = new GraphQLObjectType({
                 description: '@TODO DESCRIBE ME'
             },
 
-            nonCriticalEditCode: {
+            nonTerminalEditCode: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
             },

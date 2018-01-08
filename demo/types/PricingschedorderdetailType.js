@@ -87,6 +87,11 @@ var PricingschedorderdetailType = new GraphQLObjectType({
             tradingPartnerConfigId: {
                 type: GraphQLString,
                 description: '@TODO DESCRIBE ME'
+            },
+
+            daysBeforeDueDate: {
+                type: GraphQLInt,
+                description: '@TODO DESCRIBE ME'
             }
         };
     }

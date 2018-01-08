@@ -117,6 +117,16 @@ var MemgroupcontractoptType = new GraphQLObjectType({
             deleteInd: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
+            },
+
+            logicalDeleteReason: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            priorExpirationDate: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
             }
         };
     }

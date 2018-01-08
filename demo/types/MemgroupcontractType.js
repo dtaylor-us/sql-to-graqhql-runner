@@ -137,6 +137,21 @@ var MemgroupcontractType = new GraphQLObjectType({
             migrationInd: {
                 type: GraphQLInt,
                 description: '@TODO DESCRIBE ME'
+            },
+
+            priorExpirationDate: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            priorExpirationReason: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
+            },
+
+            contractReinstatementReason: {
+                type: GraphQLString,
+                description: '@TODO DESCRIBE ME'
             }
         };
     }
